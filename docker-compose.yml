@@ -34,6 +34,22 @@ services:
     depends_on: #indica que primero debe subir los servicios indicados.
       - base-datos-app-web
 
+  webc: #nombre del servicio
+    #    build: ./practica-4
+    image: radf0001/practica-6-app-h2-web:latest
+    env_file: #Indica el parametro para
+      - .env
+    environment: #variable de ambiente
+      - NOMBRE_APP=$AMBIENTE
+      - server.port=8082
+    expose:
+      - 8082
+    restart: always
+    networks: #red para conectar los equipos.
+      - red-app
+    depends_on: #indica que primero debe subir los servicios indicados.
+      - base-datos-app-web
+
   base-datos-app-web:
     image: oscarfonts/h2:alpine
     env_file: #Indica el parametro para
@@ -49,7 +65,7 @@ services:
 
   haproxy:
     environment:
-      - CERT1=lbr.playdomtv.me
+      - CERT1=lb.playdomtv.me
       - EMAIL=radf0001@ce.pucmm.edu.do
       - STAGING=false
     volumes:
@@ -57,6 +73,7 @@ services:
     links:
       - weba
       - webb
+      - webc
     networks:
       - red-app
     ports:

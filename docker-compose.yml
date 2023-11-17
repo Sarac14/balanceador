@@ -3,7 +3,7 @@ version: '3.9'
 #Bloque de servicios, indica los contenedores a utilizar.
 services:
   app1:       #nombre del servicio
-#    build: ./practica-4
+#    build: ./practica-2
     image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
@@ -19,7 +19,7 @@ services:
       - base-datos-app-web
 
   app2: #nombre del servicio
-    #    build: ./practica-4
+    #    build: ./practica-2
     image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
@@ -35,7 +35,7 @@ services:
       - base-datos-app-web
 
   app3: #nombre del servicio
-    #    build: ./practica-4
+    #    build: ./practica-2
     image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env

@@ -20,7 +20,7 @@ services:
 
   app2: #nombre del servicio
     #    build: ./practica-2
-    image: smct0001/docker-compose:latest
+    image: hrsp0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
     environment: #variable de ambiente

@@ -65,7 +65,7 @@ services:
 
   haproxy:
     environment:
-      - CERT1=lb.playdomtv.me
+      - CERT1=app1.anydomain.me
       - EMAIL=smct0001@ce.pucmm.edu.do
       - STAGING=false
     volumes:

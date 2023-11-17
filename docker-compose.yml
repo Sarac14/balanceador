@@ -2,9 +2,9 @@
 version: '3.9'
 #Bloque de servicios, indica los contenedores a utilizar.
 services:
-  weba:       #nombre del servicio
+  app1:       #nombre del servicio
 #    build: ./practica-4
-    image: radf0001/practica-6-app-h2-web:latest
+    image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
     environment:    #variable de ambiente
@@ -18,9 +18,9 @@ services:
     depends_on:   #indica que primero debe subir los servicios indicados.
       - base-datos-app-web
 
-  webb: #nombre del servicio
+  app2: #nombre del servicio
     #    build: ./practica-4
-    image: radf0001/practica-6-app-h2-web:latest
+    image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
     environment: #variable de ambiente
@@ -34,9 +34,9 @@ services:
     depends_on: #indica que primero debe subir los servicios indicados.
       - base-datos-app-web
 
-  webc: #nombre del servicio
+  app3: #nombre del servicio
     #    build: ./practica-4
-    image: radf0001/practica-6-app-h2-web:latest
+    image: smct0001/docker-compose:latest
     env_file: #Indica el parametro para
       - .env
     environment: #variable de ambiente
@@ -66,14 +66,14 @@ services:
   haproxy:
     environment:
       - CERT1=lb.playdomtv.me
-      - EMAIL=radf0001@ce.pucmm.edu.do
+      - EMAIL=smct0001@ce.pucmm.edu.do
       - STAGING=false
     volumes:
       - ./haproxy/haproxy.cfg:/etc/haproxy/haproxy.cfg
     links:
-      - weba
-      - webb
-      - webc
+      - app1
+      - app2
+      - app3
     networks:
       - red-app
     ports:

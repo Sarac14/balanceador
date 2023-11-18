@@ -65,8 +65,8 @@ services:
 
   haproxy:
     environment:
-      # - CERT1=app1.sarablog.me
-      # - EMAIL=smct0001@ce.pucmm.edu.do
+      - CERT1=app1.awesomes.live
+      - EMAIL=smct0001@ce.pucmm.edu.do
       - STAGING=false
     volumes:
       - ./haproxy/haproxy.cfg:/etc/haproxy/haproxy.cfg

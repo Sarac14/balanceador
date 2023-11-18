@@ -4,7 +4,7 @@ version: '3.9'
 services:
   app1:       #nombre del servicio
 #    build: ./practica-2
-    image: smct0001/docker-compose:latest
+    image: smct0001/balanceadores:latest
     env_file: #Indica el parametro para
       - .env
     environment:    #variable de ambiente
@@ -20,7 +20,7 @@ services:
 
   app2: #nombre del servicio
     #    build: ./practica-2
-    image: smct0001/docker-compose:latest
+    image: smct0001/balanceadores:latest
     env_file: #Indica el parametro para
       - .env
     environment: #variable de ambiente
@@ -36,7 +36,7 @@ services:
 
   app3: #nombre del servicio
     #    build: ./practica-2
-    image: smct0001/docker-compose:latest
+    image: smct0001/balanceadores:latest
     env_file: #Indica el parametro para
       - .env
     environment: #variable de ambiente
